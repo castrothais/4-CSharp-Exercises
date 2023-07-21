@@ -68,9 +68,8 @@ namespace Exercicio1
         }
 
 
-        static bool VitoryCheck(char[,] board, char player)
+        static bool VictoryCheck(char[,] board, char player)
         {
-
             for (int i = 0; i < 3; i++)
             {
                 if ((board[i, 0] == player && board[i, 1] == player && board[i, 2] == player) ||
@@ -80,7 +79,6 @@ namespace Exercicio1
                 }
             }
 
-
             if ((board[0, 0] == player && board[1, 1] == player && board[2, 2] == player) ||
                 (board[0, 2] == player && board[1, 1] == player && board[2, 0] == player))
             {
@@ -89,6 +87,7 @@ namespace Exercicio1
 
             return false;
         }
+
 
         static void Main(string[] args)
         {
@@ -116,9 +115,9 @@ namespace Exercicio1
                 {
                     Player1Play(board, inputLine, inputColumn);
                     PrintBoard(board);
-                    if (VitoryCheck(board, 'X'))
+                    if (VictoryCheck(board, 'X'))
                     {
-                        Console.WriteLine("Jogador 1 (X) venceu!");
+                        Console.WriteLine("Jogador 1 é o Vencedor");
                         break;
                     }
                 }
@@ -126,9 +125,9 @@ namespace Exercicio1
                 {
                     Player2Play(board, inputLine, inputColumn);
                     PrintBoard(board);
-                    if (VitoryCheck(board, 'O'))
+                    if (VictoryCheck(board, 'O'))
                     {
-                        Console.WriteLine("Jogador 2 (O) venceu!");
+                        Console.WriteLine("Jogador 2 é o Vencedor");
                         break;
                     }
                 }
